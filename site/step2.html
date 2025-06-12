@@ -1,9 +1,121 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head><meta charset="UTF-8"><title>Музыкальная подсказка</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ Музыкальная подсказка }}</title>
+  <style>
+    /* === Цветовая палитра === */
+    :root {
+      --bg-color: #f4f1ed;
+      --primary-color: #b08d57;   /* золотой */
+      --secondary-color: #2d3a3a; /* тёмно-синий */
+      --text-color: #333333;
+      --accent-color: #d9c8b2;
+      --card-bg: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+    /* === Сброс стилей === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center; /* Центрирует текст по всей странице */
+    }
+    a { color: var(--primary-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img, audio, iframe { display: block; margin: 0 auto; }
+
+    /* === Контейнеры === */
+    .container {
+      width: 90%; max-width: 800px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    header, footer {
+      width: 100%;
+      background-color: var(--secondary-color);
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+      box-shadow: 0 2px 4px var(--shadow-color);
+    }
+    header h1, footer p { font-size: 1.25rem; }
+
+    /* === Основной контент === */
+    main {
+      flex: 1;
+      width: 100%;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 8px var(--shadow-color);
+      text-align: center; /* Центрирует текст внутри карточек */
+    }
+    .card h2 {
+      color: var(--secondary-color);
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+    }
+    .card p {
+      margin-bottom: 1rem;
+    }
+    .button {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px var(--shadow-color);
+      transition: background-color 0.2s ease;
+      text-align: center;
+    }
+    .button:hover {
+      background-color: var(--accent-color);
+    }
+
+    /* === Формы и ввод === */
+    input[type="text"] {
+      padding: 0.5rem;
+      border: 2px solid var(--secondary-color);
+      border-radius: 4px;
+      width: 80%;
+      margin: 0.5rem auto;
+      display: block;
+      text-align: center;
+    }
+    button {
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 1rem; }
+      header h1, footer p { font-size: 1rem; }
+    }
+  </style>
+</head>
 <body>
-  <h2>Звуки праздника</h2>
-  <audio controls src="music.mp3"></audio>
-  <p>Насладись этим пением по полной.</p>
+  <header>
+    <h1>  </h1>
+  </header>
+<body>
+<main class="container">
+    <div class="card">
+      <h2>Музыкальная подсказка</h2>
+      <p>Чтобы найти следующую подсказку, послушай эту мелодию.</p>
+      <audio controls src="music.mp3"></audio>
+      <p>Насладись этим пением по полной.</p>
+    </div>
+</main>
 </body>
 </html>
